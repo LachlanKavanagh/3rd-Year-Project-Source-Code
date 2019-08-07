@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Student Homepage</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/StudentHomepageStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script href="../js/CookieHandler.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="jumbotron text-center">
+    	<h1 class="display-4" id="header">Welcome STUDENT</h1>
+    </div>
+	<div class="container">
+		<div class="row">
+			<div id="next_module_col" class="col border border-dark rounded homepage-module text-center">
+				<h2 id = "next_module_name">NEXT_MODULE_NAME</h2>
+				<img src="../images/default.jpg" class="img-thumbnail">
+				<p id="next_module_description">NEXT_MODULE DESCRIPTION</p>
+				<div class = "row">
+					<div class = "col">
+						<p id="previous_mark">PREVIOUS SCORE</p>
+					</div>
+					<div class = "col">
+						<a href="IndividualModulePage.php" class = "btn btn-primary", onclick="setCookie('current_module',this.id,1)">Start Module</a>
+					</div>
+				</div>
+			</div>
+			<div class="col border border-dark rounded homepage-module text-center">
+				<h2> Module List </h2>
+				<div id="module_list" class="list-group">
+
+	    			<a id="module1" href="IndividualModulePage.php" class="list-group-item list-group-item-action list-group-item-danger" onclick="setCookie('module' '1', 1)"> MODULE 1 </a>
+	    			<a id="module2" href="IndividualModulePage.php" class="list-group-item list-group-item-action list-group-item-danger" onclick="setCookie('module' '2', 1)"> MODULE 2 </a>
+	    			<a id="module3" href="IndividualModulePage.php" class="list-group-item list-group-item-action list-group-item-danger" onclick="setCookie('module' '3', 1)"> MODULE 3 </a>
+
+	    		</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id= "running_class" class="col">
+
+			</div>
+			<div id = "forum" class="col">
+
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/loginPageStyle.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/CookieHandler.js"></script>
+	<script type="text/javascript">
+		function update_form_dimensions(){
+			var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+			// ensure the height of login form div is the remainder of the viewport, after the header
+			var header_height = document.getElementById('header').clientHeight;
+			var content_height = (height - header_height) + "px";
+			document.getElementById('form_div').setAttribute("style","height:" + content_height);
+			document.getElementById('form_div').style.height=content_height;
+			document.getElementById('container').setAttribute("style","height:" + content_height);
+			document.getElementById('container').style.height=content_height;
+		} // func height
+
+		function update_background_image_size(){
+			var body_width = document.getElementById("body").clientWidth;
+			var body_height = document.getElementById("body").clientHeight;
+			var background_size = body_width + "px " + body_height + "px;"
+			document.getElementById('body').setAttribute("style","background-size:" + background_size);
+			document.getElementById('container').style.backgroundSize = background_size;
+		} // update_background_image_size
+
+		$(document).ready(function(){
+			$(window).resize(function(){
+				update_form_dimensions();
+				update_background_image_size();
+			});
+		}); // when window resized
+
+		function Initial_update(){
+			update_form_dimensions();
+			update_background_image_size();
+		} // func inital update
+
+		window.addEventListener("load", Initial_update, true);
+
+	</script>
+</head>
+<body id="body">
+	<div id = "header" class="jumbotron text-center">
+		<h1 class="display-4 ">Welcome to PROJECT TITLE</h1>
+	</div>
+	<div id="container" class = "container">
+		<div id="form_div" class ="row justify-content-center align-items-center">
+			<form class="col-12" method="POST" action="LoginLogic.php">
+				<div class ="form-group row">
+					<label class="col-2 col-form-label" for="Username">Username</label>
+					<div class="col-10">
+						<input type="text" class="form-control" id="Username" name="Username" placeholder="Username">
+					</div>
+				</div>
+				<div class ="form-group row">
+					<label class="col-2 col-form-label" for="Password">Password</label>
+					<div class="col-10">
+						<input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+					</div>
+				</div>
+				<div class ="row justify-content-center">
+					<button type="submit" class="btn btn-primary" onClick="setCookie('name', document.getElementById('Username').value ,1);"">Log In</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>

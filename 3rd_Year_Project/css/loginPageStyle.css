@@ -1,0 +1,8 @@
+html, body{
+	height: 100%;
+	margin: 0;
+	background-image: url(../Images/Login_background.jpg);
+}
+.jumbotron{
+	margin-bottom: 0px;
+}
